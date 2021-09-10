@@ -3,6 +3,8 @@ import ContainerBlock from "../components/ContainerBlock";
 import FavouriteProjects from "../components/FavoriteProjects";
 import Hero from "../components/Hero";
 import { LatestCode } from "../components/LatestCode";
+import userData from "../constants/data";
+import getLatestRepos from "../lib/getLatestRepos";
 
 export default function Home() {
   return (
@@ -12,7 +14,21 @@ export default function Home() {
     >
       <Hero />
       <FavouriteProjects />
-      {/* <LatestCode /> */}
+      {/* <LatestCode repositories={repositories} /> */}
     </ContainerBlock>
   );
 }
+
+// export const getServerSideProps = async () => {
+//   console.log(process.env.GITHUB_AUTH_TOKEN);
+//   let token = process.env.GITHUB_AUTH_TOKEN;
+
+//   const repositories = await getLatestRepos(userData, token);
+//   console.log("REPOSITORIES", repositories);
+
+//   return {
+//     props: {
+//       repositories,
+//     },
+//   };
+// };
