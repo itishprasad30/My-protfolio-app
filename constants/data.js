@@ -34,7 +34,7 @@ const userData = {
     },
     {
       title: "My Portfolio App",
-      link: "https://github.com/itishprasad30",
+      link: "https://my-protfolio-app.vercel.app/",
       imgUrl: "/portfolio.png",
     },
     {
