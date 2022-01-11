@@ -6,7 +6,8 @@ import { LatestCode } from "../components/LatestCode";
 import userData from "../constants/data";
 import getLatestRepos from "../lib/getLatestRepos";
 
-export default function Home() {
+export default function Home({ repositories }) {
+  console.log(repositories);
   return (
     <ContainerBlock
       title="Itish Prasad "
@@ -18,6 +19,15 @@ export default function Home() {
     </ContainerBlock>
   );
 }
+export const getServerSideProps = async () => {
+  const repositories = await getLatestRepos(userData);
+  console.log("repo:::", repositories);
+  return {
+    props: {
+      repositories,
+    },
+  };
+};
 
 // export const getServerSideProps = async () => {
 //   console.log(process.env.GITHUB_AUTH_TOKEN);
