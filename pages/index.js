@@ -2,7 +2,7 @@ import Head from "next/head";
 import ContainerBlock from "../components/ContainerBlock";
 import FavouriteProjects from "../components/FavoriteProjects";
 import Hero from "../components/Hero";
-import { LatestCode } from "../components/LatestCode";
+import LatestCode from "../components/LatestCode";
 import userData from "../constants/data";
 import getLatestRepos from "../lib/getLatestRepos";
 
@@ -15,7 +15,7 @@ export default function Home({ repositories }) {
     >
       <Hero />
       <FavouriteProjects />
-      {/* <LatestCode repositories={repositories} /> */}
+      <LatestCode repositories={repositories} />
     </ContainerBlock>
   );
 }
